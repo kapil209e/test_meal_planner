@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Food Calendar</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>My Food Calendar</h1>
+        
+        <!-- Week Navigation -->
+        <div class="navigation">
+            <button>Previous Week</button>
+            <span>Current Week</span>
+            <button>Next Week</button>
+        </div>
+
+        <!-- Calendar Grid -->
+        <div class="calendar">
+            <div class="day">Sunday</div>
+            <div class="day">Monday</div>
+            <div class="day">Tuesday</div>
+            <div class="day">Wednesday</div>
+            <div class="day">Thursday</div>
+            <div class="day">Friday</div>
+            <div class="day">Saturday</div>
+        </div>
+
+        <!-- Add this new upload section -->
+        <div class="upload-section">
+            <h2>Upload Meals from CSV</h2>
+            <input type="file" id="csvFile" accept=".csv">
+            <button onclick="handleFileUpload()">Upload CSV</button>
+            <p class="upload-note">CSV Format: date,meal_type,meal_name</p>
+        </div>
+
+        <!-- Replace the old form with this new one -->
+        <div class="meal-form">
+            <h2>Add a Meal</h2>
+            <select id="day-select">
+                <!-- Will be filled by JavaScript with actual dates -->
+            </select>
+            <select id="meal-type">
+                <option value="breakfast">Breakfast</option>
+                <option value="lunch">Lunch</option>
+                <option value="dinner">Dinner</option>
+            </select>
+            <input type="text" id="meal-input" placeholder="Enter meal name">
+            <button onclick="addMeal()">Add Meal</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
